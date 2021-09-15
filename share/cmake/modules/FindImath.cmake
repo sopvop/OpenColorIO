@@ -176,6 +176,7 @@ if(NOT Imath_FOUND)
             -DBUILD_TESTING=OFF
             -DPYTHON=OFF
             -DIMATH_HALF_USE_LOOKUP_TABLE=OFF
+            -DCMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}
         )
 
         if(CMAKE_TOOLCHAIN_FILE)

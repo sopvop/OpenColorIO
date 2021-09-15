@@ -180,6 +180,7 @@ if(NOT expat_FOUND)
             -DEXPAT_BUILD_EXAMPLES=OFF
             -DEXPAT_BUILD_TESTS=OFF
             -DEXPAT_BUILD_TOOLS=OFF
+            -DCMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}
             -DEXPAT_SHARED_LIBS=OFF
         )
 
