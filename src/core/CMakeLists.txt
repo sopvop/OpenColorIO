@@ -18,15 +18,6 @@ list(APPEND core_export_headers ${CMAKE_BINARY_DIR}/export/OpenColorABI.h)
 
 # Process all warnings as errors
 
-if(WIN32)
-    # On debug mode there are other kinds of warning...
-    if("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
-        set(EXTERNAL_COMPILE_FLAGS "${EXTERNAL_COMPILE_FLAGS} /WX")
-    endif()
-else()
-    set(EXTERNAL_COMPILE_FLAGS "${EXTERNAL_COMPILE_FLAGS} -Werror")
-endif()
-
 # SHARED
 
 if(OCIO_BUILD_SHARED)
@@ -66,9 +57,9 @@ if(OCIO_BUILD_SHARED)
         SOVERSION ${SOVERSION})
     
     install(TARGETS OpenColorIO EXPORT OpenColorIO 
-        ARCHIVE DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/lib${LIB_SUFFIX}
-        LIBRARY DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/lib${LIB_SUFFIX}
-        RUNTIME DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/bin
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}
     )
 endif()
 
@@ -94,7 +85,7 @@ if(OCIO_BUILD_STATIC)
         VERSION ${OCIO_VERSION}
         SOVERSION ${SOVERSION})
     
-    install(TARGETS OpenColorIO_STATIC EXPORT OpenColorIO ARCHIVE DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/lib/static)
+    install(TARGETS OpenColorIO_STATIC EXPORT OpenColorIO ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/static)
 endif()
 
 macro(target_link_OCIO target)
@@ -116,4 +107,4 @@ message(STATUS "Create OpenColorIO.pc from OpenColorIO.pc.in")
 configure_file(${CMAKE_SOURCE_DIR}/export/pkgconfig/OpenColorIO.pc.in
     ${CMAKE_CURRENT_BINARY_DIR}/OpenColorIO.pc @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/OpenColorIO.pc
-    DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/lib${LIB_SUFFIX}/pkgconfig/)
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig/)
