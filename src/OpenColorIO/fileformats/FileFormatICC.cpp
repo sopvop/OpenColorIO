@@ -12,7 +12,7 @@
 #include "ops/gamma/GammaOp.h"
 #include "ops/lut1d/Lut1DOp.h"
 #include "ops/matrix/MatrixOp.h"
-#include "pystring/pystring.h"
+#include "pystring.h"
 #include "transforms/FileTransform.h"
 
 

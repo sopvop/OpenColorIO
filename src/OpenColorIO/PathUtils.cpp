@@ -10,7 +10,7 @@
 
 #include "Mutex.h"
 #include "PathUtils.h"
-#include "pystring/pystring.h"
+#include "pystring.h"
 #include "utils/StringUtils.h"
 
 #if !defined(_WIN32)

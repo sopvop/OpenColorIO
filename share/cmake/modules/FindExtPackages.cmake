@@ -26,7 +26,7 @@ set(CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY ON CACHE BOOL
 
 # expat
 # https://github.com/libexpat/libexpat
-find_package(expat 2.2.8 REQUIRED)
+find_package(EXPAT 2.2.8 REQUIRED)
 
 # yaml-cpp
 # https://github.com/jbeder/yaml-cpp
@@ -50,9 +50,9 @@ else()
 
     # OpenEXR/IlmBase (<=2.5)
     # https://github.com/AcademySoftwareFoundation/openexr
-    find_package(Half 2.4.0 REQUIRED)
+    find_package(OpenEXR 2.4.0 REQUIRED)
 
-    set(OCIO_HALF_LIB IlmBase::Half CACHE STRING "Half library target" FORCE)
+		set(OCIO_HALF_LIB IlmBase::Half CACHE STRING "Half library target" FORCE)
     set(OCIO_USE_IMATH_HALF "0" CACHE STRING "Whether 'half' type will be sourced from the Imath library (>=v3.0)" FORCE)
 endif()
 
@@ -65,7 +65,7 @@ if(OCIO_BUILD_APPS)
 
     # lcms2
     # https://github.com/mm2/Little-CMS
-    find_package(lcms2 2.2 REQUIRED)
+    find_package(lcms 2.2 REQUIRED)
 endif()
 
 if(OCIO_BUILD_OPENFX)

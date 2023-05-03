@@ -14,7 +14,7 @@
 #include "Mutex.h"
 #include "PathUtils.h"
 #include "PrivateTypes.h"
-#include "pystring/pystring.h"
+#include "pystring.h"
 #include "utils/StringUtils.h"
 
 

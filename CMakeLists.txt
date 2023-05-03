@@ -9,9 +9,9 @@ cmake_minimum_required(VERSION 3.12)
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH}
-    ${CMAKE_SOURCE_DIR}/share/cmake/utils
-    ${CMAKE_SOURCE_DIR}/share/cmake/macros
-    ${CMAKE_SOURCE_DIR}/share/cmake/modules
+    ${CMAKE_CURRENT_SOURCE_DIR}/share/cmake/utils
+    ${CMAKE_CURRENT_SOURCE_DIR}/share/cmake/macros
+    ${CMAKE_CURRENT_SOURCE_DIR}/share/cmake/modules
 )
 
 set(CMAKE_WARN_DEPRECATED ON)
@@ -272,7 +272,7 @@ else()
     set(OCIO_SETUP_NAME setup_ocio.sh)
 endif()
 
-configure_file(${CMAKE_SOURCE_DIR}/share/ocio/${OCIO_SETUP_NAME}.in
+configure_file(${PROJECT_SOURCE_DIR}/share/ocio/${OCIO_SETUP_NAME}.in
     ${CMAKE_CURRENT_BINARY_DIR}/share/ocio/${OCIO_SETUP_NAME} @ONLY)
 
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/share/ocio/${OCIO_SETUP_NAME} DESTINATION share/ocio/)
