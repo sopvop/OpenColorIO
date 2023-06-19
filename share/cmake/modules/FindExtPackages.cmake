@@ -110,9 +110,4 @@ if(OCIO_BUILD_PYTHON OR OCIO_BUILD_DOCS)
     find_package(Python ${OCIO_PYTHON_VERSION} REQUIRED
                  COMPONENTS ${_Python_COMPONENTS})
 
-    if(OCIO_BUILD_PYTHON)
-        # pybind11
-        # https://github.com/pybind/pybind11
-        find_package(pybind11 2.6.1 REQUIRED)
-    endif()
 endif()
