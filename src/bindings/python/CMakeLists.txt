@@ -110,7 +110,7 @@ set(SOURCES
 
 # Reason not to use pybind11_add_module ?
 # https://pybind11.readthedocs.io/en/stable/compiling.html#pybind11-add-module
-add_library(PyOpenColorIO MODULE ${SOURCES})
+pybind11_add_module(PyOpenColorIO MODULE ${SOURCES})
 
 if(OCIO_BUILD_DOCS)
 	add_dependencies(PyOpenColorIO
